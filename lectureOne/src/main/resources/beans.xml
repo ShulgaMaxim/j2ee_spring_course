@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="fragileGoods" class="lectureOne.Category">
+		<constructor-arg value="glass" />
+	</bean>
+
+	<bean id="glassProduct" class="lectureOne.Product">
+		<constructor-arg value="1000" />
+		<constructor-arg value="50" />
+		<constructor-arg ref="fragileGoods" />
+	</bean>
+
+	<bean id="simpleWarehouse" class="lectureOne.WareHouse">
+		<constructor-arg>
+			<list>
+				<ref bean="glassProduct" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="simpleExtract" class="lectureOne.Extract">
+		<constructor-arg ref="simpleWarehouse" />
+	</bean>
+
+</beans>
