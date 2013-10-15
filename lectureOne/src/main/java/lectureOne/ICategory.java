@@ -1,7 +1,8 @@
 package lectureOne;
 
-public interface ICategory {
+public interface ICategory
+{
 
-	public String getName();
-	
+    public String getName();
+
 }

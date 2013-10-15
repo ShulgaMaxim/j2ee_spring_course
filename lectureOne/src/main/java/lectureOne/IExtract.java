@@ -1,7 +1,8 @@
 package lectureOne;
 
-public interface IExtract {
+public interface IExtract
+{
 
-	public String getInfo();
-	
+    public String getInfo();
+
 }

@@ -1,18 +1,28 @@
 package lectureOne;
 
-public class Extract implements IExtract {
-	
-	private final IWareHouse warehouse;
-	
-	public Extract(IWareHouse warehouse) {
-		System.out.println("Created new Extract");
-		this.warehouse = warehouse;
-	}
+public class Extract implements IExtract
+{
 
-	public String getInfo() {
-		return warehouse.getGoods().toString();
-	}
+    private String info;
 
-	
-	
+    public Extract(IWareHouse warehouse)
+    {
+        info = createInfo(warehouse);
+    }
+
+    public String getInfo()
+    {
+        return info;
+    }
+
+    private String createInfo(IWareHouse warehouse)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (IProduct product : warehouse.getGoods())
+        {
+            sb.append(product.toString() + "\n");
+        }
+        return sb.toString();
+    }
+
 }
