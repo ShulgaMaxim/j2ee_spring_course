@@ -7,6 +7,7 @@ public class Category implements ICategory
 
     public Category(String name)
     {
+        System.out.println(name);
         this.name = name;
     }
 

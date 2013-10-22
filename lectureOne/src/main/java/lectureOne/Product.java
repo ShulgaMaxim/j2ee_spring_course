@@ -12,6 +12,7 @@ public class Product implements IProduct
         this.price = price;
         this.quan = quan;
         this.category = category;
+        System.out.println(this.toString());
     }
 
     public ICategory getCategory()
