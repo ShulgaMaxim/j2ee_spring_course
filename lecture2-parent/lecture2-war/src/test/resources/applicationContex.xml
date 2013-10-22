@@ -3,17 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="fragileGoods" class="lectureOne.Category">
+	<bean id="fragileGoods" class="Category">
 		<constructor-arg value="glass" />
 	</bean>
 
-	<bean id="glassProduct" class="lectureOne.Product">
+	<bean id="glassProduct" class="Product">
 		<constructor-arg value="1000" />
 		<constructor-arg value="50" />
 		<constructor-arg ref="fragileGoods" />
 	</bean>
 
-	<bean id="simpleWarehouse" class="lectureOne.WareHouse">
+	<bean id="simpleWarehouse" class="WareHouse">
 		<constructor-arg>
 			<list>
 				<ref bean="glassProduct" />
@@ -21,7 +21,7 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="simpleExtract" class="lectureOne.Extract">
+	<bean id="simpleExtract" class="Extract">
 		<constructor-arg ref="simpleWarehouse" />
 	</bean>
 
